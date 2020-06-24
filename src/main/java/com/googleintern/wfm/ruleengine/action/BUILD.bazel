@@ -30,7 +30,6 @@ java_binary(
 )
 
 java_binary(
-<<<<<<< HEAD
     name = "DataProcessor",
     srcs = ["DataProcessor.java"],
     visibility = ["//visibility:public"],
@@ -92,6 +91,16 @@ java_binary(
         "//src/main/java/com/googleintern/wfm/ruleengine/model:model_dependencies",
 =======
 >>>>>>> c6e7411... WIP for code review comments.
+    ],
+)
+
+java_binary(
+    name = "GeneralRulesForWorkgroupId",
+    srcs = ["GeneralRulesForWorkgroupId.java"],
+    visibility = ["//visibility:public"],
+    deps = [
+        ":maven_dependency",
+        "//src/main/java/com/googleintern/wfm/ruleengine/model:model_dependencies",
     ],
 )
 

@@ -27,7 +27,6 @@ java_test(
 )
 
 java_test(
-<<<<<<< HEAD
     name = "DataProcessorTest",
     size = "large",
     srcs = ["DataProcessorTest.java"],
@@ -52,13 +51,20 @@ java_test(
         "//src/main/java/com/googleintern/wfm/ruleengine/action:CsvParser",
         "//src/main/java/com/googleintern/wfm/ruleengine/action:DataProcessor",
         "//src/main/java/com/googleintern/wfm/ruleengine/action:WorkgroupIdGroupingUtil",
-=======
+        "//src/main/java/com/googleintern/wfm/ruleengine/action:maven_dependency",
+        "//src/main/java/com/googleintern/wfm/ruleengine/model:model_dependencies",
+    ],
+)
+
+java_test(
     name = "GeneralRulesForWorkgroupIdTest",
-    size = "large",
     srcs = ["GeneralRulesForWorkgroupIdTest.java"],
-    visibility = ["//visibility:public"],
     deps = [
->>>>>>> abef65e... WIP
+        "//src/main/java/com/googleintern/wfm/ruleengine/action:CasePoolIdAndPermissionIdGroupingUtil",
+        "//src/main/java/com/googleintern/wfm/ruleengine/action:CsvParser",
+        "//src/main/java/com/googleintern/wfm/ruleengine/action:DataProcessor",
+        "//src/main/java/com/googleintern/wfm/ruleengine/action:GeneralRulesForWorkgroupId",
+        "//src/main/java/com/googleintern/wfm/ruleengine/action:WorkgroupIdGroupingUtil",
         "//src/main/java/com/googleintern/wfm/ruleengine/action:maven_dependency",
         "//src/main/java/com/googleintern/wfm/ruleengine/model:model_dependencies",
     ],
