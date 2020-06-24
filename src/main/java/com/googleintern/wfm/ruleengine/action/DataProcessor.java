@@ -4,7 +4,11 @@ import com.google.common.collect.ImmutableList;
 import src.main.java.com.googleintern.wfm.ruleengine.model.UserPoolAssignmentModel;
 
 /**
+<<<<<<< HEAD
  * DataProcessor class is used to filter out invalid or conflict data.
+=======
+ * Data Processing class is used to filter out invalid or conflict data.
+>>>>>>> c6e7411... WIP for code review comments.
  */
 public class DataProcessor{
 

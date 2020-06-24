@@ -26,38 +26,6 @@ java_binary(
         ":maven_dependency",
         "//src/main/java/com/googleintern/wfm/ruleengine/model:FilterModel",
         "//src/main/java/com/googleintern/wfm/ruleengine/model:RuleModel",
-    ]
-)
-
-java_binary(
-    name = "DataProcessing",
-    srcs = ["DataProcessing.java"],
-    visibility = ["//visibility:public"],
-    deps = [
-        ":maven_dependency",
-        "//src/main/java/com/googleintern/wfm/ruleengine/model:model_dependencies",
-    ],
-)
-
-java_binary(
-    name = "GroupByWorkgroupId",
-    srcs = ["GroupByWorkgroupId.java"],
-    main_class = "src.main.java.com.googleintern.wfm.ruleengine.action.GroupByWorkgroupId",
-    visibility = ["//visibility:public"],
-    deps = [
-        ":CsvParser",
-        ":maven_dependency",
-        "//src/main/java/com/googleintern/wfm/ruleengine/model:model_dependencies",
-    ],
-)
-
-java_binary(
-    name = "GroupByCasePoolIdAndPermissionId",
-    srcs = ["GroupByCasePoolIdAndPermissionId.java"],
-    visibility = ["//visibility:public"],
-    deps = [
-        ":maven_dependency",
-        "//src/main/java/com/googleintern/wfm/ruleengine/model:model_dependencies",
     ],
 )
 
@@ -89,6 +57,40 @@ java_binary(
     deps = [
         ":maven_dependency",
         "//src/main/java/com/googleintern/wfm/ruleengine/model:model_dependencies",
+<<<<<<< HEAD
+    ],
+)
+
+java_binary(
+    name = "DataProcessor",
+    srcs = ["DataProcessor.java"],
+    visibility = ["//visibility:public"],
+    deps = [
+        ":maven_dependency",
+        "//src/main/java/com/googleintern/wfm/ruleengine/model:model_dependencies",
+    ],
+)
+
+java_binary(
+    name = "WorkgroupIdGroupingUtil",
+    srcs = ["WorkgroupIdGroupingUtil.java"],
+    visibility = ["//visibility:public"],
+    deps = [
+        ":CsvParser",
+        ":maven_dependency",
+        "//src/main/java/com/googleintern/wfm/ruleengine/model:model_dependencies",
+    ],
+)
+
+java_binary(
+    name = "CasePoolIdAndPermissionIdGroupingUtil",
+    srcs = ["CasePoolIdAndPermissionIdGroupingUtil.java"],
+    visibility = ["//visibility:public"],
+    deps = [
+        ":maven_dependency",
+        "//src/main/java/com/googleintern/wfm/ruleengine/model:model_dependencies",
+=======
+>>>>>>> c6e7411... WIP for code review comments.
     ],
 )
 
