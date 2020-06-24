@@ -30,6 +30,7 @@ java_binary(
 )
 
 java_binary(
+<<<<<<< HEAD
     name = "DataProcessor",
     srcs = ["DataProcessor.java"],
     visibility = ["//visibility:public"],
