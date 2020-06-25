@@ -57,40 +57,6 @@ java_binary(
     deps = [
         ":maven_dependency",
         "//src/main/java/com/googleintern/wfm/ruleengine/model:model_dependencies",
-<<<<<<< HEAD
-    ],
-)
-
-java_binary(
-    name = "DataProcessor",
-    srcs = ["DataProcessor.java"],
-    visibility = ["//visibility:public"],
-    deps = [
-        ":maven_dependency",
-        "//src/main/java/com/googleintern/wfm/ruleengine/model:model_dependencies",
-    ],
-)
-
-java_binary(
-    name = "WorkgroupIdGroupingUtil",
-    srcs = ["WorkgroupIdGroupingUtil.java"],
-    visibility = ["//visibility:public"],
-    deps = [
-        ":CsvParser",
-        ":maven_dependency",
-        "//src/main/java/com/googleintern/wfm/ruleengine/model:model_dependencies",
-    ],
-)
-
-java_binary(
-    name = "CasePoolIdAndPermissionIdGroupingUtil",
-    srcs = ["CasePoolIdAndPermissionIdGroupingUtil.java"],
-    visibility = ["//visibility:public"],
-    deps = [
-        ":maven_dependency",
-        "//src/main/java/com/googleintern/wfm/ruleengine/model:model_dependencies",
-=======
->>>>>>> c6e7411... WIP for code review comments.
     ],
 )
 

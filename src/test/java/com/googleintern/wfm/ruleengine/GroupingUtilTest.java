@@ -2,13 +2,6 @@ package src.test.java.com.googleintern.wfm.ruleengine;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableListMultimap;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-import com.google.common.collect.ImmutableSet;
->>>>>>> c6e7411... WIP for code review comments.
-=======
->>>>>>> f6ba02b... Move functions to next pull request.
 import com.google.common.collect.ImmutableSetMultimap;
 import com.opencsv.exceptions.CsvException;
 import org.junit.Assert;
@@ -18,30 +11,13 @@ import src.main.java.com.googleintern.wfm.ruleengine.action.CsvParser;
 import src.main.java.com.googleintern.wfm.ruleengine.action.WorkgroupIdGroupingUtil;
 import src.main.java.com.googleintern.wfm.ruleengine.model.FilterModel;
 import src.main.java.com.googleintern.wfm.ruleengine.model.PoolAssignmentModel;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-import src.main.java.com.googleintern.wfm.ruleengine.model.RuleModel;
->>>>>>> c6e7411... WIP for code review comments.
-=======
->>>>>>> f6ba02b... Move functions to next pull request.
 import src.main.java.com.googleintern.wfm.ruleengine.model.UserPoolAssignmentModel;
 
 import java.io.IOException;
 
 /**
-<<<<<<< HEAD
-<<<<<<< HEAD
  * GroupingUtilTest class is used to test the functionality of both WorkgroupIdGroupingUtil and
  * CasePoolIdAndPermissionIdGroupingUtil classes.
-=======
- * GroupingTest class is used to test the functionality of both WorkgroupIdGroupingUtil and
- * GroupByCasePoolIdAndPermissionId.
->>>>>>> c6e7411... WIP for code review comments.
-=======
- * GroupingUtilTest class is used to test the functionality of both WorkgroupIdGroupingUtil and
- * CasePoolIdAndPermissionIdGroupingUtil classes.
->>>>>>> f6ba02b... Move functions to next pull request.
  */
 public class GroupingUtilTest {
   private static final String TEST_CSV_FILE_PATH =
