@@ -13,13 +13,19 @@ import java.util.Set;
  * GeneralRulesForWorkgroupId class is used to create rules that can apply to all users from the
  * same work group.
  */
-public class GeneralRulesForWorkgroupId {
+public class WorkgroupIdRuleGenerator {
   /** Generate rules that can apply to all users from the same workgroup Id. */
-  public static ImmutableSet<RuleModel> generalRuleByWorkgroupId(
-      ImmutableListMultimap<Long, UserPoolAssignmentModel> userPoolAssignmentsByWorkGroupIdBuilder,
+  public static ImmutableSet<RuleModel> generateRulesForWorkgroup(
+      ImmutableListMultimap<Long, UserPoolAssignmentModel> userPoolAssignmentsByWorkGroupId,
       Long workgroupId) {
+    if (!userPoolAssignmentsByWorkGroupId.containsKey(workgroupId)) {
+      return ImmutableSet.of();
+    }
     ImmutableList<UserPoolAssignmentModel> userPoolAssignmentsFromSameWorkGroupId =
-        userPoolAssignmentsByWorkGroupIdBuilder.get(workgroupId);
+        userPoolAssignmentsByWorkGroupId.get(workgroupId);
+    if (userPoolAssignmentsFromSameWorkGroupId.size() == 0) {
+      return ImmutableSet.of();
+    }
     ImmutableSet<PoolAssignmentModel> permissionIntersections =
         findPermissionIntersection(userPoolAssignmentsFromSameWorkGroupId);
     ImmutableSetMultimap<Long, Long> permissionGroup =
@@ -30,17 +36,16 @@ public class GeneralRulesForWorkgroupId {
 
   private static ImmutableSet<PoolAssignmentModel> findPermissionIntersection(
       List<UserPoolAssignmentModel> userPoolAssignmentsFromSameWorkGroupId) {
-    ImmutableSet<PoolAssignmentModel> permissionIntersections =
+    Set<PoolAssignmentModel> permissionIntersections =
         userPoolAssignmentsFromSameWorkGroupId.get(0).poolAssignments();
 
     for (UserPoolAssignmentModel user : userPoolAssignmentsFromSameWorkGroupId) {
-      permissionIntersections =
-          ImmutableSet.copyOf(Sets.intersection(permissionIntersections, user.poolAssignments()));
+      permissionIntersections = Sets.intersection(permissionIntersections, user.poolAssignments());
       if (permissionIntersections.size() == 0) {
         return ImmutableSet.of();
       }
     }
-    return permissionIntersections;
+    return ImmutableSet.copyOf(permissionIntersections);
   }
 
   private static ImmutableSetMultimap<Long, Long> groupPermissionByCasePoolId(

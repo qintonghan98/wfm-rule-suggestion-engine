@@ -7,7 +7,7 @@ import com.opencsv.exceptions.CsvException;
 import org.junit.Assert;
 import org.junit.Test;
 import src.main.java.com.googleintern.wfm.ruleengine.action.CsvParser;
-import src.main.java.com.googleintern.wfm.ruleengine.action.GeneralRulesForWorkgroupId;
+import src.main.java.com.googleintern.wfm.ruleengine.action.WorkgroupIdRuleGenerator;
 import src.main.java.com.googleintern.wfm.ruleengine.action.WorkgroupIdGroupingUtil;
 import src.main.java.com.googleintern.wfm.ruleengine.model.FilterModel;
 import src.main.java.com.googleintern.wfm.ruleengine.model.RuleModel;
@@ -15,7 +15,7 @@ import src.main.java.com.googleintern.wfm.ruleengine.model.UserPoolAssignmentMod
 
 import java.io.IOException;
 
-public class GeneralRulesForWorkgroupIdTest {
+public class WorkgroupIdRuleGeneratorTest {
   private static final String TEST_CSV_FILE_PATH =
       System.getProperty("user.home")
           + "/Project/wfm-rule-suggestion-engine/src/"
@@ -70,12 +70,12 @@ public class GeneralRulesForWorkgroupIdTest {
         WorkgroupIdGroupingUtil.groupByWorkGroupId(userPoolAssignments);
 
     ImmutableSet<RuleModel> firstGeneratedRules =
-        GeneralRulesForWorkgroupId.generalRuleByWorkgroupId(
+        WorkgroupIdRuleGenerator.generateRulesForWorkgroup(
             mapByWorkGroupId, EXPECTED_FIRST_WORKGROUP_ID);
     Assert.assertEquals(EXPECTED_FIRST_GENERATED_RULES, firstGeneratedRules);
 
     ImmutableSet<RuleModel> secondGeneratedRules =
-        GeneralRulesForWorkgroupId.generalRuleByWorkgroupId(
+        WorkgroupIdRuleGenerator.generateRulesForWorkgroup(
             mapByWorkGroupId, EXPECTED_SECOND_WORKGROUP_ID);
     Assert.assertEquals(EXPECTED_SECOND_GENERATED_RULES, secondGeneratedRules);
   }
